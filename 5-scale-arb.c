@@ -30,4 +30,15 @@ int main() {
   int nx1 = xr + (x1 - xr) * sx;
   int ny1 = yr + (y1 - yr) * sy;
   int nx2 = xr + (x2 - xr) * sx;
- 
+  int ny2 = yr + (y2 - yr) * sy;
+  int nx3 = xr + (x3 - xr) * sx;
+  int ny3 = yr + (y3 - yr) * sy;
+
+  line(nx1, ny1, nx2, ny2);
+  line(nx2, ny2, nx3, ny3);
+  line(nx3, ny3, nx1, ny1);
+
+  getch();
+  closegraph();
+  return 0;
+}
