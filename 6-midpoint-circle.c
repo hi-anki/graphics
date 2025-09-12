@@ -29,11 +29,11 @@ void main() {
         putpixel(xc + y, yc - x, 15);
         putpixel(xc - y, yc - x, 15);
 
-        x++;
+        x = x + 1;
         if (p < 0) {
             p = p + 2 * x + 1;
         } else {
-            y--;
+            y = y - 1;
             p = p + 2 * x + 1 - 2 * y;
         }
     }
