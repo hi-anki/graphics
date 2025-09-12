@@ -9,25 +9,25 @@ void main() {
 
     initgraph(&gd, &gm, "C:\\BGI");
 
-    printf("Enter x1, y1: ");
+    printf("Enter (x1, y1): ");
     scanf("%d %d", &x1, &y1);
 
-    printf("Enter x2, y2: ");
+    printf("Enter (x2, y2): ");
     scanf("%d %d", &x2, &y2);
 
-    printf("Enter x3, y3: ");
+    printf("Enter (x3, y3): ");
     scanf("%d %d", &x3, &y3);
 
     printf("Enter scaling factors (sx, sy): ");
     scanf("%f %f", &sx, &sy);
 
-    // Draw original triangle
+    printf("Original triangle in white\n");
     setcolor(WHITE);
     line(x1, y1, x2, y2);
     line(x2, y2, x3, y3);
     line(x3, y3, x1, y1);
 
-    // Scale and draw new triangle
+    printf("Scaled triangle in yellow\n");
     setcolor(YELLOW);
     line(x1 * sx, y1 * sy, x2 * sx, y2 * sy);
     line(x2 * sx, y2 * sy, x3 * sx, y3 * sy);
