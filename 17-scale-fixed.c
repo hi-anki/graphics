@@ -14,17 +14,17 @@ void main() {
     initgraph(&gd, &gm, "C:\\BGI");
 
     // Get triangle coordinates
-    printf("Enter x1, y1: ");
+    printf("Enter (x1, y1): ");
     scanf("%d %d", &x1, &y1);
 
-    printf("Enter x2, y2: ");
+    printf("Enter (x2, y2): ");
     scanf("%d %d", &x2, &y2);
 
-    printf("Enter x3, y3: ");
+    printf("Enter (x3, y3): ");
     scanf("%d %d", &x3, &y3);
 
     // Get scaling details
-    printf("Enter fixed point (x,y) for scaling:\n");
+    printf("Enter fixed point (x,y) for scaling:");
     scanf("%d %d", &fixed_x, &fixed_y);
 
     printf("Enter scaling factors (sx, sy): ");
