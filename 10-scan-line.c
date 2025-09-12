@@ -27,7 +27,7 @@ void main() {
     int count;
     int y_min, y_max;
 
-    initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+    initgraph(&gd, &gm, "C:\\BGI");
 
     printf("Enter number of vertices (max %d): ", MAX_VERTICES);
     scanf("%d", &n);

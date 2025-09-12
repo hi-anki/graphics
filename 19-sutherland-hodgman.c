@@ -82,7 +82,7 @@ void main() {
     struct Point polygon[MAX_VERTICES], clipped_polygon[MAX_VERTICES];
     int n, clipped_n;
 
-    initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+    initgraph(&gd, &gm, "C:\\BGI");
 
     printf("Enter number of vertices (max %d): ", MAX_VERTICES);
     scanf("%d", &n);

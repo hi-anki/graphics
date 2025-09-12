@@ -8,10 +8,16 @@ void main() {
     int x1, y1, x2, y2, x3, y3;
     float theta, x1_new, y1_new, x2_new, y2_new, x3_new, y3_new;
 
-    initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+    initgraph(&gd, &gm, "C:\\BGI");
 
-    printf("Enter triangle coordinates (x1,y1), (x2,y2), (x3,y3):\n");
-    scanf("%d %d %d %d %d %d", &x1, &y1, &x2, &y2, &x3, &y3);
+    printf("Enter x1, y1: ");
+    scanf("%d %d", &x1, &y1);
+
+    printf("Enter x2, y2: ");
+    scanf("%d %d", &x2, &y2);
+
+    printf("Enter x3, y3: ");
+    scanf("%d %d", &x3, &y3);
 
     printf("Enter rotation angle (in degrees, positive): ");
     scanf("%f", &theta);

@@ -33,7 +33,7 @@ void main() {
     double x1, y1, x2, y2;
     int code1, code2;
 
-    initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+    initgraph(&gd, &gm, "C:\\BGI");
 
     printf("Enter coordinates of the first point (x1, y1): ");
     scanf("%lf %lf", &x1, &y1);

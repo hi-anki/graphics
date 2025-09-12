@@ -8,10 +8,11 @@ void main() {
     float x_step, y_step;
     int i, steps;
 
-    initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+    initgraph(&gd, &gm, "C:\\BGI");
 
     printf("Enter x1, y1: ");
     scanf("%d %d", &x1, &y1);
+
     printf("Enter x2, y2: ");
     scanf("%d %d", &x2, &y2);
 

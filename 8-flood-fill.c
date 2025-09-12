@@ -18,7 +18,7 @@ void main() {
     int x1, y1, x2, y2, x3, y3;
     int seed_x, seed_y;
 
-    initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+    initgraph(&gd, &gm, "C:\\BGI");
 
     // Get polygon coordinates
     printf("Enter triangle coordinates (x1,y1), (x2,y2), (x3,y3):\n");
