@@ -4,23 +4,21 @@
 
 void main() {
     int gd = DETECT, gm;
-    int x_coord, y_coord, pixel_color;
+    int x, y;
 
     // Initialize the graphics mode
     initgraph(&gd, &gm, "C:\\BGI");
 
     // Get input for the pixel's coordinates and color
     printf("Enter the x-coordinate: ");
-    scanf("%d", &x_coord);
+    scanf("%d", &x);
 
     printf("Enter the y-coordinate: ");
-    scanf("%d", &y_coord);
-
-    printf("Enter the color (0-15): ");
-    scanf("%d", &pixel_color);
+    scanf("%d", &y);
 
     // Print the pixel
-    putpixel(x_coord, y_coord, pixel_color);
+    printf("The pixel is in red color at (%d, %d)", x, y);
+    putpixel(x, y, 4);
 
     // Wait for a key press before closing the graphics window
     getch();
