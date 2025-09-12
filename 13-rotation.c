@@ -10,13 +10,13 @@ void main() {
 
     initgraph(&gd, &gm, "C:\\BGI");
 
-    printf("Enter x1, y1: ");
+    printf("Enter (x1, y1): ");
     scanf("%d %d", &x1, &y1);
 
-    printf("Enter x2, y2: ");
+    printf("Enter (x2, y2): ");
     scanf("%d %d", &x2, &y2);
 
-    printf("Enter x3, y3: ");
+    printf("Enter (x3, y3): ");
     scanf("%d %d", &x3, &y3);
 
     printf("Enter rotation angle (in degrees, positive): ");
@@ -24,7 +24,7 @@ void main() {
 
     theta = theta * 3.14159 / 180.0; // Convert to radians
 
-    // Draw original triangle
+    printf("Original triangle in white\n");
     setcolor(WHITE);
     line(x1, y1, x2, y2);
     line(x2, y2, x3, y3);
@@ -38,6 +38,7 @@ void main() {
     x3_new = x3 * cos(theta) - y3 * sin(theta);
     y3_new = x3 * sin(theta) + y3 * cos(theta);
 
+    printf("Rotated triangle in yellow\n");
     setcolor(YELLOW);
     line(x1_new, y1_new, x2_new, y2_new);
     line(x2_new, y2_new, x3_new, y3_new);
