@@ -10,10 +10,8 @@ void main() {
     float theta, rad_theta, sin_theta, cos_theta;
     float new_x1, new_y1, new_x2, new_y2, new_x3, new_y3;
 
-    // Initialize graphics mode
     initgraph(&gd, &gm, "C:\\BGI");
 
-    // Get triangle coordinates
     printf("Enter (x1, y1): ");
     scanf("%d %d", &x1, &y1);
 
@@ -23,19 +21,16 @@ void main() {
     printf("Enter (x3, y3): ");
     scanf("%d %d", &x3, &y3);
 
-    // Get rotation details
     printf("Enter pivot point (x,y) for rotation:");
     scanf("%d %d", &pivot_x, &pivot_y);
 
     printf("Enter rotation angle (in degrees, positive): ");
     scanf("%f", &theta);
 
-    // Convert angle to radians
     rad_theta = theta * M_PI / 180.0;
     sin_theta = sin(rad_theta);
     cos_theta = cos(rad_theta);
 
-    // Draw original triangle
     printf("Original triangle in white\n");
     setcolor(WHITE);
     line(x1, y1, x2, y2);
@@ -66,16 +61,12 @@ void main() {
     new_x3 += pivot_x;
     new_y3 += pivot_y;
 
-    // Draw the transformed triangle
     printf("Transformed triangle in yellow\n");
     setcolor(YELLOW);
     line((int)new_x1, (int)new_y1, (int)new_x2, (int)new_y2);
     line((int)new_x2, (int)new_y2, (int)new_x3, (int)new_y3);
     line((int)new_x3, (int)new_y3, (int)new_x1, (int)new_y1);
 
-    // Wait for a key press
-    getch();
-
-    // Close the graphics mode
+        getch();
     closegraph();
 }

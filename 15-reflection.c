@@ -29,7 +29,6 @@ void main() {
     line(x2, y2, x3, y3);
     line(x3, y3, x1, y1);
 
-    // Reflect and draw new triangle
     setcolor(YELLOW);
     if (choice == 1) {
         printf("Reflected triangle about x-axis in yellow\n");

@@ -10,10 +10,8 @@ void main() {
     float sx, sy;
     float new_x1, new_y1, new_x2, new_y2, new_x3, new_y3;
 
-    // Initialize graphics mode
     initgraph(&gd, &gm, "C:\\BGI");
 
-    // Get triangle coordinates
     printf("Enter (x1, y1): ");
     scanf("%d %d", &x1, &y1);
 
@@ -23,14 +21,12 @@ void main() {
     printf("Enter (x3, y3): ");
     scanf("%d %d", &x3, &y3);
 
-    // Get scaling details
     printf("Enter fixed point (x,y) for scaling:");
     scanf("%d %d", &fixed_x, &fixed_y);
 
     printf("Enter scaling factors (sx, sy): ");
     scanf("%f %f", &sx, &sy);
 
-    // Draw original triangle
     setcolor(WHITE);
     line(x1, y1, x2, y2);
     line(x2, y2, x3, y3);
@@ -66,9 +62,6 @@ void main() {
     line((int)new_x2, (int)new_y2, (int)new_x3, (int)new_y3);
     line((int)new_x3, (int)new_y3, (int)new_x1, (int)new_y1);
 
-    // Wait for a key press
     getch();
-
-    // Close the graphics mode
     closegraph();
 }
