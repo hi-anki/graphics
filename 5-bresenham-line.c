@@ -4,7 +4,7 @@
 
 void main() {
     int gd = DETECT, gm;
-    int x1, y1, x2, y2, dx, dy, x, y, p, color = 15;
+    int x1, y1, x2, y2, dx, dy, x, y, p;
     int s1, s2;
     int i = 0, temp;
 
@@ -42,7 +42,7 @@ void main() {
         dy = temp;
         p = 2 * dy - dx;
         for (i = 0; i <= dx; i++) {
-            putpixel(x, y, color);
+            putpixel(x, y, 15);
             while (p >= 0) {
                 y = y + s2;
                 p = p - 2 * dx;
@@ -54,7 +54,7 @@ void main() {
     else {
         p = 2 * dy - dx;
         for (i = 0; i <= dx; i++) {
-            putpixel(x, y, color);
+            putpixel(x, y, 15);
             while (p >= 0) {
                 x = x + s1;
                 p = p - 2 * dx;
