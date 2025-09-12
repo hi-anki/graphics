@@ -18,6 +18,7 @@ void main() {
     m = (float)(y2 - y1) / (x2 - x1);
     c = y1 - m * x1;
 
+    printf("Displaying line from (%d, %d) to (%d, %d)\n", x1, y1, x2, y2);
     for (x = x1; x <= x2; x++) {
         y = m * x + c;
         putpixel(x, (int)(y + 0.5), color);

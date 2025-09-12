@@ -17,7 +17,7 @@ void main() {
     scanf("%d", &y);
 
     // Print the pixel
-    printf("The pixel is in red color at (%d, %d)", x, y);
+    printf("The pixel is in red color at (%d, %d)\n", x, y);
     putpixel(x, y, 4);
 
     // Wait for a key press before closing the graphics window
