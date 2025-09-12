@@ -33,7 +33,7 @@ void main() {
         if (d < 0) {
             d = d + 4 * x + 6;
         } else {
-            y--;
+            y = y - 1;
             d = d + 4 * (x - y) + 10;
         }
     }
