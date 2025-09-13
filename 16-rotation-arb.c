@@ -5,31 +5,27 @@
 
 void main() {
     int gd = DETECT, gm;
-    int x1, y1, x2, y2, x3, y3;
-    int pivot_x, pivot_y;
-    float theta, rad_theta, sin_theta, cos_theta;
-    float new_x1, new_y1, new_x2, new_y2, new_x3, new_y3;
+    int x1, y1, x2, y2, x3, y3, pivot_x, pivot_y;
+    float theta, r_theta, sin, cos;
+    float x1_new, y1_new, x2_new, y2_new, x3_new, y3_new;
 
-    initgraph(&gd, &gm, "C:\\BGI");
+    initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
 
     printf("Enter (x1, y1): ");
     scanf("%d %d", &x1, &y1);
-
     printf("Enter (x2, y2): ");
     scanf("%d %d", &x2, &y2);
-
     printf("Enter (x3, y3): ");
     scanf("%d %d", &x3, &y3);
 
     printf("Enter pivot point (x,y) for rotation:");
     scanf("%d %d", &pivot_x, &pivot_y);
-
     printf("Enter rotation angle (in degrees, positive): ");
     scanf("%f", &theta);
 
-    rad_theta = theta * M_PI / 180.0;
-    sin_theta = sin(rad_theta);
-    cos_theta = cos(rad_theta);
+    r_theta = theta * M_PI / 180.0;
+    sin = sin(r_theta);
+    cos = cos(r_theta);
 
     printf("Original triangle in white\n");
     setcolor(WHITE);
@@ -37,36 +33,26 @@ void main() {
     line(x2, y2, x3, y3);
     line(x3, y3, x1, y1);
 
-    // Perform composite transformation
+    x1_new = (x1 - pivot_x) * cos - (y1 - pivot_y) * sin;
+    y1_new = (x1 - pivot_x) * sin + (y1 - pivot_y) * cos;
+    x2_new = (x2 - pivot_x) * cos - (y2 - pivot_y) * sin;
+    y2_new = (x2 - pivot_x) * sin + (y2 - pivot_y) * cos;
+    x3_new = (x3 - pivot_x) * cos - (y3 - pivot_y) * sin;
+    y3_new = (x3 - pivot_x) * sin + (y3 - pivot_y) * cos;
 
-    // Step 1: Translate the triangle so the pivot point is at the origin (0,0)
-    // The translation factors are (-pivot_x, -pivot_y)
-    
-    // Step 2: Rotate the translated triangle about the new origin
-    new_x1 = (x1 - pivot_x) * cos_theta - (y1 - pivot_y) * sin_theta;
-    new_y1 = (x1 - pivot_x) * sin_theta + (y1 - pivot_y) * cos_theta;
-    
-    new_x2 = (x2 - pivot_x) * cos_theta - (y2 - pivot_y) * sin_theta;
-    new_y2 = (x2 - pivot_x) * sin_theta + (y2 - pivot_y) * cos_theta;
-    
-    new_x3 = (x3 - pivot_x) * cos_theta - (y3 - pivot_y) * sin_theta;
-    new_y3 = (x3 - pivot_x) * sin_theta + (y3 - pivot_y) * cos_theta;
-    
-    // Step 3: Translate the rotated triangle back to the original pivot point location
-    // The translation factors are (+pivot_x, +pivot_y)
-    new_x1 += pivot_x;
-    new_y1 += pivot_y;
-    new_x2 += pivot_x;
-    new_y2 += pivot_y;
-    new_x3 += pivot_x;
-    new_y3 += pivot_y;
+    x1_new += pivot_x;
+    y1_new += pivot_y;
+    x2_new += pivot_x;
+    y2_new += pivot_y;
+    x3_new += pivot_x;
+    y3_new += pivot_y;
 
     printf("Transformed triangle in yellow\n");
     setcolor(YELLOW);
-    line((int)new_x1, (int)new_y1, (int)new_x2, (int)new_y2);
-    line((int)new_x2, (int)new_y2, (int)new_x3, (int)new_y3);
-    line((int)new_x3, (int)new_y3, (int)new_x1, (int)new_y1);
+    line((int)x1_new, (int)y1_new, (int)x2_new, (int)y2_new);
+    line((int)x2_new, (int)y2_new, (int)x3_new, (int)y3_new);
+    line((int)x3_new, (int)y3_new, (int)x1_new, (int)y1_new);
 
-        getch();
+    getch();
     closegraph();
 }

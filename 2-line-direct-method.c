@@ -4,10 +4,10 @@
 
 void main() {
     int gd = DETECT, gm;
-    int x1, y1, x2, y2, color = 15;
+    int x1, y1, x2, y2;
     float m, c, x, y;
 
-    initgraph(&gd, &gm, "C:\\BGI");
+    initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
 
     printf("Enter x1, y1: ");
     scanf("%d %d", &x1, &y1);
@@ -21,7 +21,7 @@ void main() {
     printf("Displaying line from (%d, %d) to (%d, %d)\n", x1, y1, x2, y2);
     for (x = x1; x <= x2; x++) {
         y = m * x + c;
-        putpixel(x, (int)(y + 0.5), color);
+        putpixel(x, (int)(y + 0.5), 15);
     }
 
     getch();

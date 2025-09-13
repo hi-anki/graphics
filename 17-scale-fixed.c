@@ -5,25 +5,20 @@
 
 void main() {
     int gd = DETECT, gm;
-    int x1, y1, x2, y2, x3, y3;
-    int fixed_x, fixed_y;
-    float sx, sy;
-    float new_x1, new_y1, new_x2, new_y2, new_x3, new_y3;
+    int x1, y1, x2, y2, x3, y3, fx, fy;
+    float sx, sy, float x1_new, y1_new, x2_new, y2_new, x3_new, y3_new;
 
-    initgraph(&gd, &gm, "C:\\BGI");
+    initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
 
     printf("Enter (x1, y1): ");
     scanf("%d %d", &x1, &y1);
-
     printf("Enter (x2, y2): ");
     scanf("%d %d", &x2, &y2);
-
     printf("Enter (x3, y3): ");
     scanf("%d %d", &x3, &y3);
 
     printf("Enter fixed point (x,y) for scaling:");
-    scanf("%d %d", &fixed_x, &fixed_y);
-
+    scanf("%d %d", &fx, &fy);
     printf("Enter scaling factors (sx, sy): ");
     scanf("%f %f", &sx, &sy);
 
@@ -32,35 +27,24 @@ void main() {
     line(x2, y2, x3, y3);
     line(x3, y3, x1, y1);
 
-    // Perform composite transformation
+    x1_new = (x1 - fx) * sx;
+    y1_new = (y1 - fy) * sy;
+    x2_new = (x2 - fx) * sx;
+    y2_new = (y2 - fy) * sy;    
+    x3_new = (x3 - fx) * sx;
+    y3_new = (y3 - fy) * sy;
 
-    // Step 1: Translate the triangle so the fixed point is at the origin (0,0)
-    // The translation factors are (-fixed_x, -fixed_y)
-    
-    // Step 2: Scale the translated triangle about the new origin
-    new_x1 = (x1 - fixed_x) * sx;
-    new_y1 = (y1 - fixed_y) * sy;
-    
-    new_x2 = (x2 - fixed_x) * sx;
-    new_y2 = (y2 - fixed_y) * sy;
-    
-    new_x3 = (x3 - fixed_x) * sx;
-    new_y3 = (y3 - fixed_y) * sy;
+    x1_new += fx;
+    y1_new += fy;
+    x2_new += fx;
+    y2_new += fy;
+    x3_new += fx;
+    y3_new += fy;
 
-    // Step 3: Translate the scaled triangle back to the original fixed point location
-    // The translation factors are (+fixed_x, +fixed_y)
-    new_x1 += fixed_x;
-    new_y1 += fixed_y;
-    new_x2 += fixed_x;
-    new_y2 += fixed_y;
-    new_x3 += fixed_x;
-    new_y3 += fixed_y;
-
-    // Draw the transformed triangle
     setcolor(YELLOW);
-    line((int)new_x1, (int)new_y1, (int)new_x2, (int)new_y2);
-    line((int)new_x2, (int)new_y2, (int)new_x3, (int)new_y3);
-    line((int)new_x3, (int)new_y3, (int)new_x1, (int)new_y1);
+    line((int)x1_new, (int)y1_new, (int)x2_new, (int)y2_new);
+    line((int)x2_new, (int)y2_new, (int)x3_new, (int)y3_new);
+    line((int)x3_new, (int)y3_new, (int)x1_new, (int)y1_new);
 
     getch();
     closegraph();

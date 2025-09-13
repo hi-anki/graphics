@@ -8,7 +8,7 @@ void main() {
     int x1, y1, x2, y2, x3, y3;
     float theta, x1_new, y1_new, x2_new, y2_new, x3_new, y3_new;
 
-    initgraph(&gd, &gm, "C:\\BGI");
+    initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
 
     printf("Enter (x1, y1): ");
     scanf("%d %d", &x1, &y1);

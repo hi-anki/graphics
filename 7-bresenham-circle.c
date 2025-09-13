@@ -7,7 +7,7 @@ void main() {
     int xc, yc, r;
     int x, y, d;
 
-    initgraph(&gd, &gm, "C:\\BGI");
+    initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
 
     printf("Enter center coordinates (xc, yc): ");
     scanf("%d %d", &xc, &yc);

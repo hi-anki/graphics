@@ -9,7 +9,7 @@ void main() {
     float x_step, y_step, x, y;
     int i, steps;
 
-    initgraph(&gd, &gm, "C:\\BGI");
+    initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
 
     printf("Enter x1, y1: ");
     scanf("%d %d", &x1, &y1);

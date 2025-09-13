@@ -6,8 +6,7 @@ void main() {
     int gd = DETECT, gm;
     int x, y;
 
-    // Initialize the graphics mode
-    initgraph(&gd, &gm, "C:\\BGI");
+    initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
 
     printf("Enter the x-coordinate: ");
     scanf("%d", &x);
