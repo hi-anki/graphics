@@ -6,7 +6,7 @@
 void main() {
     int gd = DETECT, gm;
     int x1, y1, x2, y2, x3, y3, pivot_x, pivot_y;
-    float theta, r_theta, sin, cos;
+    float theta, r_theta, sinx, cosx;
     float x1_new, y1_new, x2_new, y2_new, x3_new, y3_new;
 
     initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
@@ -24,8 +24,8 @@ void main() {
     scanf("%f", &theta);
 
     r_theta = theta * M_PI / 180.0;
-    sin = sin(r_theta);
-    cos = cos(r_theta);
+    sinx = sin(r_theta);
+    cosx = cos(r_theta);
 
     printf("Original triangle in white\n");
     setcolor(WHITE);
@@ -33,12 +33,12 @@ void main() {
     line(x2, y2, x3, y3);
     line(x3, y3, x1, y1);
 
-    x1_new = (x1 - pivot_x) * cos - (y1 - pivot_y) * sin;
-    y1_new = (x1 - pivot_x) * sin + (y1 - pivot_y) * cos;
-    x2_new = (x2 - pivot_x) * cos - (y2 - pivot_y) * sin;
-    y2_new = (x2 - pivot_x) * sin + (y2 - pivot_y) * cos;
-    x3_new = (x3 - pivot_x) * cos - (y3 - pivot_y) * sin;
-    y3_new = (x3 - pivot_x) * sin + (y3 - pivot_y) * cos;
+    x1_new = (x1 - pivot_x) * cosx - (y1 - pivot_y) * sinx;
+    y1_new = (x1 - pivot_x) * sinx + (y1 - pivot_y) * cosx;
+    x2_new = (x2 - pivot_x) * cosx - (y2 - pivot_y) * sinx;
+    y2_new = (x2 - pivot_x) * sinx + (y2 - pivot_y) * cosx;
+    x3_new = (x3 - pivot_x) * cosx - (y3 - pivot_y) * sinx;
+    y3_new = (x3 - pivot_x) * sinx + (y3 - pivot_y) * cosx;
 
     x1_new += pivot_x;
     y1_new += pivot_y;
